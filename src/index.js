@@ -47,7 +47,9 @@ async function searchImages(query, page) {
       );
     }
     else {
-      Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
+      if (page === 1) {
+        Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
+      }
       
       const cards = images.map((image) => {
         return `<div class="card">
@@ -99,7 +101,7 @@ loadMoreBtn.addEventListener('click', async() => {
      .querySelector('.gallery')
     .firstElementChild.getBoundingClientRect();
    window.scrollBy({
-    top: cardHeight * 80,
+    top: cardHeight * 2,
     behavior: 'smooth',
   });
 });

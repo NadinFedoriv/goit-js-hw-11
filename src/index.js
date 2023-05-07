@@ -34,8 +34,7 @@ async function searchImages(query, page) {
            page: page,
          },
        });
-    
-    gallery.innerHTML = '';
+   
                
     const images = response.data.hits;
     const totalHits = response.data.totalHits;
